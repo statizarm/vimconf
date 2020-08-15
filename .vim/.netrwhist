@@ -1,0 +1,4 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/art/projects/regular_expr_compiler/cpp/src'
+let g:netrw_dirhist_2='/home/art/learning/algorithms/cormen/sort/src'
