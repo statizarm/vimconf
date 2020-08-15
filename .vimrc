@@ -15,6 +15,7 @@ set numberwidth=5 " ширина столбца нумерации строк
 "highlight ColorColumn ctermbg=grey
 
 
+syntax on
 " Подгружать vimrc после каждой записи
 autocmd bufwritepost $MYVIMRC source $MYVIMRC
 
