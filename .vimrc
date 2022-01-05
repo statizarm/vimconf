@@ -1,23 +1,44 @@
 set nocompatible " Это отключает обратную совместимость с vi
+set termguicolors
 
-set t_Co=256 " Цвета получше
+filetype on
+filetype detect
+filetype indent off
+
+let ftype = &filetype
+
+" set t_Co=256 " Цвета получше
 " Ширина разделительной линии
 set colorcolumn=80
 
-set number relativenumber " Включает относительную нумерацию строк
+if has('nvim')
+	set relativenumber " Включает относительную нумерацию строк
+endif
+
+set number " Включает относительную нумерацию строк
 " tabstop - ширина табуляции, softtabstop - ширина мягкой табуляции
 " shiftwidth - количество пробелов на которое изменяется ширина табуляции
 "              при использовании символов изменения отступов
-" noexpandtab - запрещать разворачивание табуляции в пробелы
-set tabstop=4 softtabstop=2 shiftwidth=4 noexpandtab
+" expandtab - разрешить разворачивание табуляции в пробелы
+if ftype ==# 'c' || ftype ==# 'cpp'
+	set tabstop=4 softtabstop=2 expandtab shiftwidth=4
+elseif ftype ==# 'vim'
+	set tabstop=2 noexpandtab shiftwidth=2
+elseif ftype ==# 'haskell'
+	set tabstop=4 expandtab shiftwidth=4
+else
+	set tabstop=4 noexpandtab shiftwidth=4
+endif
+
 set numberwidth=5 " ширина столбца нумерации строк
 " Цвет вертикальной разделительной линии
 "highlight ColorColumn ctermbg=grey
 
+" Автоотступ при новой строке
+" set autoindent
 
-syntax on
 " Подгружать vimrc после каждой записи
-autocmd bufwritepost $MYVIMRC source $MYVIMRC
+" autocmd bufwritepost $MYVIMRC source $MYVIMRC
 
 " Формат строки состояния
 " fileformat - формат файла (unix, dos); fileencoding - кодировка файла;
@@ -30,22 +51,51 @@ set laststatus=2 " всегда показывать строку состоян
 
 set scrolloff=10 " количество строки внизу и вверху экрана при скроллинге
 
-set termguicolors
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+	
+if has('nvim')
 
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
+	" let g:haskell_classic_highlighting=1
 
-set background=light
+	call plug#begin(stdpath('data') . '/plugged')
 
-let g:airline_theme='gruvbox'
+  Plug 'neovim/nvim-lspconfig'
 
-let g:gruvbox_contrast_light='medium'
-let g:gruvbox_contrast_dark='soft'
+  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+  Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+	Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
-" gruvbox кастомное цветовое оформление
-let g:gruvbox_number_column='bg1'
-let g:gruvbox_color_column='bg1'
-let g:gruvbox_vert_split='bg4'
+	Plug 'sheerun/vim-polyglot'
+	" Plug 'EdenEast/nightfox.nvim'
+	
+	Plug 'morhetz/gruvbox'
 
-colorscheme gruvbox
+	call plug#end()
+
+	source ~/.config/nvim/etc/haskell.vim
+	source ~/.config/nvim/etc/gruvbox.vim
+	luafile ~/.config/nvim/etc/coq.lua
+	luafile ~/.config/nvim/etc/lsp.lua
+
+	colorscheme gruvbox
+else
+	call plug#begin('~/.vim/plugged')
+
+	Plug 'morhetz/gruvbox'
+
+	call plug#end()
+
+	source ~/.vim/etc/gruvbox.vim
+
+	colorscheme gruvbox
+endif
+
+
+filetype indent off
+
+syntax on
 
