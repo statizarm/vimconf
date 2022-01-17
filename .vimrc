@@ -69,19 +69,25 @@ if has('nvim')
   Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 	Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
-	Plug 'sheerun/vim-polyglot'
-	" Plug 'EdenEast/nightfox.nvim'
-	
 	Plug 'morhetz/gruvbox'
+
+	Plug 'kyazdani42/nvim-web-devicons' " for file icons
+	Plug 'kyazdani42/nvim-tree.lua'
+
+	" airline
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
 	call plug#end()
 
 	source ~/.config/nvim/etc/haskell.vim
-	source ~/.config/nvim/etc/gruvbox.vim
+	" source ~/.config/nvim/etc/gruvbox.vim
+	source ~/.config/nvim/etc/airline.vim
+
+	luafile ~/.config/nvim/etc/devicons.lua
+	luafile ~/.config/nvim/etc/nvim-tree.lua
 	luafile ~/.config/nvim/etc/coq.lua
 	luafile ~/.config/nvim/etc/lsp.lua
-
-	colorscheme gruvbox
 else
 	call plug#begin('~/.vim/plugged')
 
