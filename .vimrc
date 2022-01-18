@@ -74,20 +74,29 @@ if has('nvim')
 	Plug 'kyazdani42/nvim-web-devicons' " for file icons
 	Plug 'kyazdani42/nvim-tree.lua'
 
-	" airline
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+	" lualine
+	Plug 'nvim-lualine/lualine.nvim'
+
+	" semantic code highlight
+	Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+	"theme
+	Plug 'EdenEast/nightfox.nvim'
 
 	call plug#end()
 
 	source ~/.config/nvim/etc/haskell.vim
+	" source ~/.config/nvim/etc/airline.vim
 	" source ~/.config/nvim/etc/gruvbox.vim
-	source ~/.config/nvim/etc/airline.vim
+  " source ~/.config/nvim/etc/cxx-highlight.vim
 
 	luafile ~/.config/nvim/etc/devicons.lua
 	luafile ~/.config/nvim/etc/nvim-tree.lua
 	luafile ~/.config/nvim/etc/coq.lua
 	luafile ~/.config/nvim/etc/lsp.lua
+	luafile ~/.config/nvim/etc/lualine.lua
+
+	colorscheme nightfox
 else
 	call plug#begin('~/.vim/plugged')
 
