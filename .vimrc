@@ -59,17 +59,11 @@ endif
 	
 if has('nvim')
 
-	" let g:haskell_classic_highlighting=1
-
 	call plug#begin(stdpath('data') . '/plugged')
 
-  Plug 'neovim/nvim-lspconfig'
+  	Plug 'neovim/nvim-lspconfig'
 
-  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-  Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-	Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-
-	Plug 'morhetz/gruvbox'
+  	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
 	Plug 'kyazdani42/nvim-web-devicons' " for file icons
 	Plug 'kyazdani42/nvim-tree.lua'
@@ -89,7 +83,7 @@ if has('nvim')
 	source ~/.config/nvim/etc/nvim-keybindings.vim
 	" source ~/.config/nvim/etc/airline.vim
 	" source ~/.config/nvim/etc/gruvbox.vim
-  " source ~/.config/nvim/etc/cxx-highlight.vim
+  	" source ~/.config/nvim/etc/cxx-highlight.vim
 
 	luafile ~/.config/nvim/etc/devicons.lua
 	luafile ~/.config/nvim/etc/nvim-tree.lua
