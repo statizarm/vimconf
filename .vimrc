@@ -86,6 +86,7 @@ if has('nvim')
 	call plug#end()
 
 	source ~/.config/nvim/etc/haskell.vim
+	source ~/.config/nvim/etc/nvim-keybindings.vim
 	" source ~/.config/nvim/etc/airline.vim
 	" source ~/.config/nvim/etc/gruvbox.vim
   " source ~/.config/nvim/etc/cxx-highlight.vim
