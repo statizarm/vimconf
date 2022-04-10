@@ -20,14 +20,13 @@ set number " Включает относительную нумерацию ст
 " shiftwidth - количество пробелов на которое изменяется ширина табуляции
 "              при использовании символов изменения отступов
 " expandtab - разрешить разворачивание табуляции в пробелы
-if ftype ==# 'c' || ftype ==# 'cpp'
-	set tabstop=4 softtabstop=2 expandtab shiftwidth=4
+set tabstop=4 expandtab shiftwidth=4
+if ftype ==# 'c' || ftype ==# 'cpp' || ftype ==# 'h' || ftype ==# 'hpp'
+	set tabstop=4 expandtab shiftwidth=4
 elseif ftype ==# 'vim'
 	set tabstop=2 noexpandtab shiftwidth=2
 elseif ftype ==# 'haskell'
 	set tabstop=4 expandtab shiftwidth=4
-else
-	set tabstop=4 noexpandtab shiftwidth=4
 endif
 
 set numberwidth=5 " ширина столбца нумерации строк
@@ -83,7 +82,7 @@ if has('nvim')
 	source ~/.config/nvim/etc/nvim-keybindings.vim
 	" source ~/.config/nvim/etc/airline.vim
 	" source ~/.config/nvim/etc/gruvbox.vim
-  	" source ~/.config/nvim/etc/cxx-highlight.vim
+	" source ~/.config/nvim/etc/cxx-highlight.vim
 
 	luafile ~/.config/nvim/etc/devicons.lua
 	luafile ~/.config/nvim/etc/nvim-tree.lua

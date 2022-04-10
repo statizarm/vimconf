@@ -45,5 +45,11 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- additional settings
+nvim_lsp.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
 vim.lsp.set_log_level('debug')
 
