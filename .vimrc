@@ -60,9 +60,9 @@ if has('nvim')
 
 	call plug#begin(stdpath('data') . '/plugged')
 
-  	Plug 'neovim/nvim-lspconfig'
+  Plug 'neovim/nvim-lspconfig'
 
-  	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
 	Plug 'kyazdani42/nvim-web-devicons' " for file icons
 	Plug 'kyazdani42/nvim-tree.lua'
