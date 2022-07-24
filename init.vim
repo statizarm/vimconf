@@ -64,43 +64,48 @@ if has('nvim')
 
   Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
-	Plug 'kyazdani42/nvim-web-devicons' " for file icons
-	Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'kyazdani42/nvim-web-devicons' " for file icons
+  Plug 'kyazdani42/nvim-tree.lua'
 
 	" lualine
-	Plug 'nvim-lualine/lualine.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
 
 	" semantic code highlight
-	Plug 'jackguo380/vim-lsp-cxx-highlight'
+	" Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 	"theme
-	Plug 'EdenEast/nightfox.nvim'
+  Plug 'EdenEast/nightfox.nvim'
 
-	call plug#end()
+	" Tree sitter
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-	source ~/.config/nvim/etc/haskell.vim
-	source ~/.config/nvim/etc/nvim-keybindings.vim
-	" source ~/.config/nvim/etc/airline.vim
-	" source ~/.config/nvim/etc/gruvbox.vim
-	" source ~/.config/nvim/etc/cxx-highlight.vim
+  call plug#end()
 
-	luafile ~/.config/nvim/etc/devicons.lua
-	luafile ~/.config/nvim/etc/nvim-tree.lua
-	luafile ~/.config/nvim/etc/coq.lua
-	luafile ~/.config/nvim/etc/lsp.lua
-	luafile ~/.config/nvim/etc/lualine.lua
+  " source ~/.config/nvim/etc/haskell.vim
+  source ~/.config/nvim/etc/nvim-keybindings.vim
+  " source ~/.config/nvim/etc/airline.vim
+  " source ~/.config/nvim/etc/gruvbox.vim
+  " source ~/.config/nvim/etc/cxx-highlight.vim
 
-	colorscheme nightfox
+  luafile ~/.config/nvim/etc/devicons.lua
+  luafile ~/.config/nvim/etc/nvim-tree.lua
+  luafile ~/.config/nvim/etc/coq.lua
+  luafile ~/.config/nvim/etc/lsp.lua
+  luafile ~/.config/nvim/etc/lualine.lua
+  luafile ~/.config/nvim/etc/nvim-treesitter.lua
+  luafile ~/.config/nvim/etc/nightfox.lua
+
+  colorscheme nightfox
 else
-	call plug#begin('~/.vim/plugged')
+  call plug#begin('~/.vim/plugged')
 
-	Plug 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
 
-	call plug#end()
+  call plug#end()
 
-	source ~/.vim/etc/gruvbox.vim
+  source ~/.vim/etc/gruvbox.vim
 
-	colorscheme gruvbox
+  colorscheme gruvbox
 endif
 
 
