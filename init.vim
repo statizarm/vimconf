@@ -62,10 +62,10 @@ if has('nvim')
 
   Plug 'neovim/nvim-lspconfig'
 
-  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+  Plug 'statizarm/coq_nvim', {'tag': 'v1.0.0'}
 
-  Plug 'kyazdani42/nvim-web-devicons' " for file icons
-  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-web-devicons' " for file icons
+  Plug 'nvim-tree/nvim-tree.lua'
 
 	" lualine
   Plug 'nvim-lualine/lualine.nvim'
