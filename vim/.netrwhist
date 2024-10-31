@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/statizarm/arcadia/quality/user_sessions/rt'
 let g:netrw_dirhist_2='/home/art/.stack/global-project/.stack-work/install/x86_64-linux-tinfo6/cab5aa341cca91c682dfcc26f972fb6fd63078aa2116009080c8641f45b36571/8.10.7/pkgdb'
 let g:netrw_dirhist_1='/home/art/.stack/global-project/.stack-work/install/x86_64-linux-tinfo6/cab5aa341cca91c682dfcc26f972fb6fd63078aa2116009080c8641f45b36571/8.10.7'
 let g:netrw_dirhist_0='/home/art/.stack/global-project/.stack-work/install/x86_64-linux-tinfo6/cab5aa341cca91c682dfcc26f972fb6fd63078aa2116009080c8641f45b36571'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/art/.stack/global-project/.stack-work'
 let g:netrw_dirhist_6='/home/art/.stack/global-project'
 let g:netrw_dirhist_5='/home/art/.stack'
 let g:netrw_dirhist_4='/home/art/.stack/global-project'
-let g:netrw_dirhist_3='/home/art/.stack'
